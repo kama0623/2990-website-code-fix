@@ -18,6 +18,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/index.css" /> ```
+	
+	### 2. ハンバーガーメニュー修正のための jQuery 追加（`</body>`直前）
+	
+	画面を一番下までスクロールし、`</body>`タグの直前にある既存のスクリプトタグ（`js/common.js`と`js/index.js`）の**上（直前）**に、以下の **jQuery** の読み込みタグを追加します。
+	
+	```html
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <script src="js/common.js" defer></script>
+	    <script src="js/index.js" defer></script>
+	  </body>
+	</html>
     <meta property="og:site_name" content="にくきゅう。" />
     <meta property="og:url" content="https://www.2990.jp/" />
     <meta property="og:type" content="website" />

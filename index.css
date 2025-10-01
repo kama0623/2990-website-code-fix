@@ -1,1 +1,38 @@
+/* service-grid のオーバーレイ修正 (SP用) */
+@media screen and (max-width: 767px) {
+    /* サービスグリッド全体のスタイル調整 (SPで縦並びにするための基礎) */
+    .service-grid {
+        display: block; /* 縦並びの基本 */
+        /* 必要に応じて上下の余白などを調整 */
+    }
 
+    /* 各サービス項目（aタグ）のスタイル */
+    .service-grid__item {
+        margin-bottom: 20px; /* 項目ごとの余白 */
+        display: block;
+        position: relative; /* オーバーレイを画像の上に重ねるための基準 */
+        overflow: hidden; /* 画像がはみ出さないように */
+    }
+
+    /* オーバーレイ（文字）部分のスタイル */
+    .service-grid__overlay {
+        /* SPでも常に画像全体を覆い、文字を表示させるための設定 */
+        position: absolute; /* 画像の上に重ねる */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1; /* ★常に不透明（表示状態）にする★ */
+        /* 背景色や文字色が必要であれば追加 */
+        /* background-color: rgba(0, 0, 0, 0.5); /* 例：半透明の黒を重ねる */ */
+        color: #fff; /* 文字色を白にする */
+
+        /* 文字を中央に配置する調整 (Flexboxを使用) */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 垂直方向中央寄せ */
+        align-items: center;     /* 水平方向中央寄せ */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}
